@@ -109,7 +109,7 @@ Provide a detailed, helpful response:"""
             return jsonify({
                 'success': True,
                 'response': response.text,
-                'model': 'gemini-1.5-flash'
+                'model': 'gemini-2.5-pro'
             })
         else:
             return jsonify({
