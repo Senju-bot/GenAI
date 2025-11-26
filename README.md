@@ -1,4 +1,4 @@
-# 🚀 AI Business Analyzer
+# 🚀 AI-Business-Idea-Market-Analyzer
 
 An intelligent business analysis tool powered by Google's Gemini AI that helps entrepreneurs and business professionals generate ideas, analyze markets, and make data-driven decisions.
 
