@@ -66,12 +66,12 @@ function startNewChat() {
                     <h2>Hello! I'm your AI Business Analyzer.</h2>
                     <p>I can help you with:</p>
                     <ul class="feature-list">
-                        <li>💡 Generate unique business ideas</li>
-                        <li>📊 Analyze market potential</li>
-                        <li>🎯 Evaluate competitors</li>
-                        <li>💰 Create financial projections</li>
-                        <li>📈 Develop marketing strategies</li>
-                        <li>📁 Analyze your business data</li>
+                        <li>* Generate unique business ideas</li>
+                        <li>* Analyze market potential</li>
+                        <li>* Evaluate competitors</li>
+                        <li>* Create financial projections</li>
+                        <li>* Develop marketing strategies</li>
+                        <li>* Analyze your business data</li>
                     </ul>
                     <p class="cta-text">What would you like to explore today?</p>
                 </div>
