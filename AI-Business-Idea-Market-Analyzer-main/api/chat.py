@@ -213,17 +213,17 @@ Be specific with numbers from the data and provide concrete, actionable advice."
 
 if __name__ == '__main__':
     print("\n" + "="*70)
-    print("🚀 AI Business Analyzer API")
+    print(" AI Business Analyzer API")
     print("="*70)
     
     if not api_key:
-        print("❌ ERROR: GOOGLE_API_KEY environment variable not set!")
-        print("📝 Please set it with: export GOOGLE_API_KEY=your_key_here")
-        print("🔗 Get your key at: https://aistudio.google.com/app/apikey")
+        print(" ERROR: GOOGLE_API_KEY environment variable not set!")
+        print(" Please set it with: export GOOGLE_API_KEY=your_key_here")
+        print(" Get your key at: https://aistudio.google.com/app/apikey")
     else:
-        print("✅ API Key: Configured")
-        print("🤖 Model: Google Gemini 1.5 Flash")
-        print("🌐 Server: Running on http://localhost:5000")
+        print(" API Key: Configured")
+        print(" Model: Google gemini-2.5-pro")
+        print(" Server: Running on http://localhost:5000")
     
     print("="*70 + "\n")
     
