@@ -284,6 +284,7 @@ async function handleFileUpload(event) {
 }
 
 // Add Financial Charts
+// Add Financial Charts
 function addFinancialCharts() {
     const container = document.getElementById('messagesContainer');
     const chartId = Date.now();
@@ -293,35 +294,35 @@ function addFinancialCharts() {
     chartsDiv.innerHTML = `
         <div class="chart-container">
             <div class="chart-title">📈 Revenue & Expenses Trend</div>
-            <canvas id="lineChart_${chartId}" style="height:180px; width:100%;"></canvas>
-
+            <canvas id="lineChart_${chartId}" width="320" height="180"></canvas>
         </div>
+
         <div class="chart-container">
             <div class="chart-title">💰 Monthly Profit Analysis</div>
-            <canvas id="barChart_${chartId}" style="height:180px; width:100%;"></canvas>
+            <canvas id="barChart_${chartId}" width="320" height="180"></canvas>
         </div>
     `;
     container.appendChild(chartsDiv);
-    
-    // Scroll to charts
-    chartsDiv.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    
-    // Create charts after DOM is ready
+
+    // Scroll
+    chartsDiv.scrollIntoView({ behavior: "smooth", block: "end" });
+
+    // Create charts
     setTimeout(() => {
         const lineCanvas = document.getElementById(`lineChart_${chartId}`);
         const barCanvas = document.getElementById(`barChart_${chartId}`);
+
         if (lineCanvas) createLineChart(lineCanvas);
         if (barCanvas) createBarChart(barCanvas);
-    }, 100);
+    }, 150);
 }
 
 // Create Line Chart
 function createLineChart(canvas) {
-    // Generate sample data (in production, this would come from the uploaded file)
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const revenueData = months.map((_, i) => 15000 + Math.random() * 5000 + i * 1500);
-    const expenseData = months.map((_, i) => 8000 + Math.random() * 3000 + i * 800);
-    
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const revenueData = months.map((_, i) => 15000 + Math.random()*5000 + i*1500);
+    const expenseData = months.map((_, i) => 8000 + Math.random()*3000 + i*800);
+
     new Chart(canvas, {
         type: 'line',
         data: {
@@ -346,28 +347,21 @@ function createLineChart(canvas) {
             ]
         },
         options: {
-            responsive: true,
+            responsive: false,         // 🔥 STOP auto-resize
             maintainAspectRatio: false,
             plugins: {
                 legend: {
                     labels: { 
                         color: '#fff',
-                        font: { size: 12 }
+                        font: { size: 10 }
                     }
-                },
-                tooltip: {
-                    mode: 'index',
-                    intersect: false,
                 }
             },
             scales: {
                 y: {
-                    beginAtZero: true,
                     ticks: { 
                         color: '#9ca3af',
-                        callback: function(value) {
-                            return '$' + value.toLocaleString();
-                        }
+                        callback: (v) => '$' + v.toLocaleString()
                     },
                     grid: { color: '#374151' }
                 },
@@ -382,9 +376,9 @@ function createLineChart(canvas) {
 
 // Create Bar Chart
 function createBarChart(canvas) {
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const profitData = months.map((_, i) => 7000 + Math.random() * 4000 + i * 700);
-    
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const profitData = months.map((_, i) => 7000 + Math.random()*4000 + i*700);
+
     new Chart(canvas, {
         type: 'bar',
         data: {
@@ -392,36 +386,25 @@ function createBarChart(canvas) {
             datasets: [{
                 label: 'Profit',
                 data: profitData,
-                backgroundColor: '#10b981',
-                borderRadius: 6
+                backgroundColor: '#10b981'
             }]
         },
         options: {
-            responsive: true,
+            responsive: false,        // 🔥 FIXED SIZE
             maintainAspectRatio: false,
             plugins: {
                 legend: {
                     labels: { 
                         color: '#fff',
-                        font: { size: 12 }
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return 'Profit: $' + context.parsed.y.toLocaleString();
-                        }
+                        font: { size: 10 }
                     }
                 }
             },
             scales: {
                 y: {
-                    beginAtZero: true,
                     ticks: { 
                         color: '#9ca3af',
-                        callback: function(value) {
-                            return '$' + value.toLocaleString();
-                        }
+                        callback: (v) => '$' + v.toLocaleString()
                     },
                     grid: { color: '#374151' }
                 },
@@ -433,6 +416,7 @@ function createBarChart(canvas) {
         }
     });
 }
+
 
 // Save Chat to LocalStorage
 function saveChat() {
