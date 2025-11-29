@@ -293,11 +293,11 @@ function addFinancialCharts() {
     chartsDiv.innerHTML = `
         <div class="chart-container">
             <div class="chart-title">📈 Revenue & Expenses Trend</div>
-            <canvas id="lineChart_${chartId}" width="400" height="200"></canvas>
+            <canvas id="lineChart_${chartId}" width="100" height="100"></canvas>
         </div>
         <div class="chart-container">
             <div class="chart-title">💰 Monthly Profit Analysis</div>
-            <canvas id="barChart_${chartId}" width="400" height="200"></canvas>
+            <canvas id="barChart_${chartId}" width="100" height="100"></canvas>
         </div>
     `;
     container.appendChild(chartsDiv);
