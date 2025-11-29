@@ -462,11 +462,12 @@ body {
 
 /* Chart Container */
 .chart-container {
-    margin-top: 20px;
-    background: var(--secondary-bg);
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
+    width: 340px;
+    height: 220px;
+    padding: 10px;
+    background: #1f2937;
+    border-radius: 10px;
+    margin: 10px 0;
 }
 
 .chart-title {
